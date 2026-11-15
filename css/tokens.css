@@ -1,0 +1,79 @@
+/* tokens.css — Cute Pastel & Clean Handcrafted Design Tokens */
+
+:root {
+  color-scheme: dark;
+
+  /* Cozy Dark Pastel Surfaces */
+  --bg-void: #14111d;
+  --bg-deep: #1b1626;
+  --bg-panel: rgba(28, 22, 40, 0.78);
+  --bg-panel-elevated: rgba(36, 29, 52, 0.88);
+  --bg-card: rgba(32, 25, 46, 0.72);
+  --bg-card-hover: rgba(44, 34, 64, 0.88);
+  --bg-input: rgba(18, 14, 26, 0.85);
+
+  /* Typography Colors */
+  --text-bright: #fff5fb;
+  --text-main: #e2d9f3;
+  --text-muted: #9f94b8;
+  --text-dim: #6d6285;
+
+  /* Default Cute Theme: Sakura Lavender (Hồng Sakura & Tím Pastel) */
+  --neon-primary: #ff9ebb;
+  --neon-secondary: #c4b5fd;
+  --neon-tertiary: #a7f3d0;
+  --neon-rgb: 255, 158, 187;
+  --neon-sec-rgb: 196, 181, 253;
+
+  /* Status Colors */
+  --status-online: #6ee7b7;
+  --status-warning: #fde047;
+  --status-offline: #fda4af;
+
+  /* Soft Cute Pastel Borders & Gentle Glows */
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-border-strong: rgba(var(--neon-rgb), 0.38);
+  --glass-highlight: rgba(255, 255, 255, 0.12);
+  --neon-glow: 0 8px 24px rgba(var(--neon-rgb), 0.18);
+  --neon-glow-strong: 0 12px 32px rgba(var(--neon-rgb), 0.28);
+  --card-shadow: 0 14px 40px rgba(10, 7, 18, 0.45);
+
+  /* Soft Cute Radii */
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 26px;
+  --radius-pill: 999px;
+
+  --blur-glass: blur(16px) saturate(140%);
+  --transition-fast: 150ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-smooth: 280ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Cute Preset 2: Mint Matcha Cream */
+:root[data-neon="synth"] {
+  --neon-primary: #6ee7b7;
+  --neon-secondary: #93c5fd;
+  --neon-tertiary: #fbcfe8;
+  --neon-rgb: 110, 231, 183;
+  --neon-sec-rgb: 147, 197, 253;
+  --bg-void: #0d1916;
+  --bg-deep: #132420;
+  --bg-panel: rgba(18, 38, 33, 0.78);
+  --bg-card: rgba(22, 46, 40, 0.72);
+  --bg-card-hover: rgba(28, 58, 50, 0.88);
+}
+
+/* Cute Preset 3: Peach Cream Warm */
+:root[data-neon="emerald"] {
+  --neon-primary: #fca5a5;
+  --neon-secondary: #fdba74;
+  --neon-tertiary: #fde047;
+  --neon-rgb: 252, 165, 165;
+  --neon-sec-rgb: 253, 186, 116;
+  --bg-void: #1a1213;
+  --bg-deep: #24191b;
+  --bg-panel: rgba(40, 26, 29, 0.78);
+  --bg-card: rgba(48, 31, 35, 0.72);
+  --bg-card-hover: rgba(62, 40, 45, 0.88);
+}

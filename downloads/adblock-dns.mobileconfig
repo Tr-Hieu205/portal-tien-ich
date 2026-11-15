@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>PayloadContent</key>
+    <array>
+        <dict>
+            <key>DNSSettings</key>
+            <dict>
+                <key>DNSProtocol</key>
+                <string>Cleartext</string>
+                <key>ServerAddresses</key>
+                <array>
+                    <string>127.0.0.1</string>
+                </array>
+            </dict>
+            <key>PayloadDescription</key>
+            <string>Cấu hình DNS In-House Ad-Blocker cục bộ</string>
+            <key>PayloadDisplayName</key>
+            <string>In-House Ad-Blocker DNS</string>
+            <key>PayloadIdentifier</key>
+            <string>com.tienich.dns.settings</string>
+            <key>PayloadType</key>
+            <string>com.apple.dnsSettings.managed</string>
+            <key>PayloadUUID</key>
+            <string>9F88C02B-2A51-4E7B-B41E-9C86A5F58C01</string>
+            <key>PayloadVersion</key>
+            <integer>1</integer>
+        </dict>
+    </array>
+    <key>PayloadDescription</key>
+    <string>Hồ sơ cấu hình bảo vệ quảng cáo và theo dõi toàn diện</string>
+    <key>PayloadDisplayName</key>
+    <string>Tiện Ích - In-House DNS Filter</string>
+    <key>PayloadIdentifier</key>
+    <string>com.tienich.dns.profile</string>
+    <key>PayloadOrganization</key>
+    <string>Tiện Ích Private Suite</string>
+    <key>PayloadRemovalDisallowed</key>
+    <false/>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>7B3A2C1D-4E5F-6A7B-8C9D-0E1F2A3B4C5D</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+</dict>
+</plist>

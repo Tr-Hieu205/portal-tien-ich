@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Tr_Hiuz Admin 👑 // Quản Trị Hệ Thống</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="cyber-backdrop" aria-hidden="true"></div>
+
+  <div class="cyber-shell">
+    <!-- Left Admin Sidebar -->
+    <aside class="cyber-sidebar" aria-label="Menu Quản Trị Viên">
+      <div>
+        <div class="sidebar-brand">
+          <div class="brand-avatar" title="Admin Tr_Hiuz">👑</div>
+          <div class="brand-meta">
+            <div class="brand-name-box">
+              <h1>Tr_Hiuz Admin</h1>
+            </div>
+            <span>TRANG QUẢN TRỊ RIÊNG</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Điều hướng Admin">
+          <div class="nav-section-label">Chức Năng Admin</div>
+
+          <button type="button" class="sidebar-link is-active" data-admin-section="liveMonitor">
+            <span>📡 Giám Sát IP &amp; Trạng Thái</span>
+            <span class="nav-badge" id="badgeOnlineCount">0 ON</span>
+          </button>
+
+          <button type="button" class="sidebar-link" data-admin-section="notesManager">
+            <span>✍️ Ghi Chú &amp; Cập Nhật</span>
+            <span class="nav-badge">NOTES</span>
+          </button>
+
+          <button type="button" class="sidebar-link" data-admin-section="addUtility">
+            <span>➕ Thêm Tiện Ích Mới</span>
+            <span class="nav-badge">NEW</span>
+          </button>
+
+          <button type="button" class="sidebar-link" data-admin-section="webConfig">
+            <span>⚙️ Cấu Hình Trang Web</span>
+            <span class="nav-badge">CFG</span>
+          </button>
+
+          <div class="nav-section-label" style="margin-top: 10px;">Trang Công Khai</div>
+          <a href="index.html" class="sidebar-link">
+            <span>🏠 Về Trang Người Dùng</span>
+            <span class="nav-badge">USER</span>
+          </a>
+        </nav>
+      </div>
+
+      <div>
+        <div class="nav-section-label">Tông Màu Giao Diện</div>
+        <div class="neon-switcher" role="group" aria-label="Chọn màu giao diện">
+          <button type="button" class="neon-swatch is-active" data-neon-select="cyan">🌸 Sakura</button>
+          <button type="button" class="neon-swatch" data-neon-select="synth">🍃 Matcha</button>
+          <button type="button" class="neon-swatch" data-neon-select="emerald">🍑 Peach</button>
+        </div>
+
+        <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--glass-border); font-size: 0.74rem; color: var(--text-muted);">
+          <div style="color: var(--status-online);">● Tự động cập nhật mỗi 3 giây</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Admin Workspace -->
+    <main class="cyber-main">
+      <!-- SECTION 1: LIVE IP & ONLINE/OFFLINE MONITOR -->
+      <section class="view-section" id="secLiveMonitor">
+        <div class="cyber-hero" style="grid-template-columns: 1fr;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <div class="eyebrow-tag">● GIÁM SÁT TRỰC TIẾP // ONLINE &amp; OFFLINE</div>
+              <h2 style="font-size: 1.7rem; margin-top: 6px;">Theo Dõi IP &amp; Trạng Thái Hoạt Động 📡</h2>
+              <p style="color: var(--text-muted); margin: 6px 0 0;">
+                Hiển thị real-time máy/trình duyệt nào đang mở sử dụng tiện ích hoặc web (<strong style="color: var(--status-online);">Online</strong>) và máy nào đã tắt (<strong style="color: var(--text-muted);">Offline</strong>).
+              </p>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <button type="button" class="btn-cute-secondary" id="btnRefreshClients">🔄 Làm Mới Ngay</button>
+              <button type="button" class="btn-glass" id="btnClearClients" style="color: var(--status-offline);">🗑️ Xóa Nhật Ký</button>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px;">
+            <div class="metric-box" style="border-color: rgba(110, 231, 183, 0.35);">
+              <div class="metric-label">Đang Hoạt Động (Online)</div>
+              <div class="metric-value" id="statOnline" style="color: var(--status-online);">0 Máy</div>
+              <div style="font-size: 0.78rem; color: var(--text-muted); margin-top: 4px;">● Đang bật trình duyệt / tải về</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Đã Tắt (Offline)</div>
+              <div class="metric-value" id="statOffline" style="color: var(--text-muted);">0 Máy</div>
+              <div style="font-size: 0.78rem; color: var(--text-dim); margin-top: 4px;">● Không còn kết nối</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Tổng IP Đã Ghi Nhận</div>
+              <div class="metric-value" id="statTotal">0 IP</div>
+              <div style="font-size: 0.78rem; color: var(--neon-primary); margin-top: 4px;">Lịch sử cài đặt &amp; truy cập</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-panel" style="margin-top: 20px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 14px;">
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button type="button" class="chip-btn is-active" data-filter-status="all">Tất Cả</button>
+              <button type="button" class="chip-btn" data-filter-status="online">🟢 Đang Hoạt Động</button>
+              <button type="button" class="chip-btn" data-filter-status="offline">⚫ Đã Tắt (Offline)</button>
+            </div>
+            <span style="font-size: 0.8rem; color: var(--text-muted);" id="lastUpdatedLabel">Đang đồng bộ...</span>
+          </div>
+
+          <div class="telemetry-table-wrapper" style="max-height: 520px;">
+            <table class="telemetry-table">
+              <thead>
+                <tr>
+                  <th>Trạng Thái</th>
+                  <th>Địa Chỉ IP</th>
+                  <th>Thời Gian Hoạt Động / Tắt</th>
+                  <th>Tiện Ích Đang Dùng / Đã Tải</th>
+                  <th>Thiết Bị / Trình Duyệt</th>
+                </tr>
+              </thead>
+              <tbody id="adminClientsBody">
+                <tr><td colspan="5" style="text-align:center; padding:24px; color:var(--text-muted);">Đang tải dữ liệu...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: GHI CHÚ & CẬP NHẬT TIỆN ÍCH -->
+      <section class="view-section" id="secNotesManager" hidden>
+        <div class="glass-panel">
+          <div class="eyebrow-tag">// QUẢN LÝ NỘI DUNG</div>
+          <h2 style="font-size: 1.5rem; margin-top: 6px;">Ghi Chú &amp; Cập Nhật Tính Năng Tiện Ích ✍️</h2>
+          <p style="color: var(--text-muted); margin: 6px 0 18px;">
+            Thêm ghi chú mới vào mục "Đã thêm &amp; nâng cấp những gì" — tự động đồng bộ sang trang người dùng.
+          </p>
+
+          <form id="formAdminNote" style="display: flex; flex-direction: column; gap: 14px; max-width: 680px;">
+            <div>
+              <label for="selectAdminUtility" style="display:block; font-size:0.84rem; margin-bottom:6px; color:var(--text-muted);">Chọn tiện ích:</label>
+              <select id="selectAdminUtility" style="width:100%; padding:11px 14px; border-radius:12px; border:1px solid var(--glass-border); background:var(--bg-input); color:var(--text-bright); font-size:0.9rem;"></select>
+            </div>
+            <div>
+              <label for="adminNoteInput" style="display:block; font-size:0.84rem; margin-bottom:6px; color:var(--text-muted);">Nội dung ghi chú / bản cập nhật mới:</label>
+              <textarea id="adminNoteInput" required rows="4" placeholder="VD: Đã tối ưu bộ lọc quảng cáo YouTube, chặn sạch không còn màn hình đen..." style="width:100%; padding:11px 14px; border-radius:12px; border:1px solid var(--glass-border); background:var(--bg-input); color:var(--text-bright); font-size:0.9rem; resize:vertical;"></textarea>
+            </div>
+            <button type="submit" class="btn-cute-primary" style="align-self: flex-start;">💾 Lưu Ghi Chú Lên Trang Web</button>
+          </form>
+
+          <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--glass-border);">
+            <h4 style="margin: 0 0 10px; color: var(--text-bright);">Ghi Chú Đã Thêm Gần Đây:</h4>
+            <ul class="added-item-list" id="adminSavedNotesList"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: THÊM TIỆN ÍCH MỚI -->
+      <section class="view-section" id="secAddUtility" hidden>
+        <div class="glass-panel">
+          <div class="eyebrow-tag">// MỞ RỘNG KHO</div>
+          <h2 style="font-size: 1.5rem; margin-top: 6px;">Đăng Ký Tiện Ích Mới Vào Trang Chủ ➕</h2>
+          <p style="color: var(--text-muted); margin: 6px 0 18px;">
+            Tạo thẻ tiện ích mới để hiển thị cho người dùng tải về.
+          </p>
+
+          <form id="formAddUtilityPage" style="display: flex; flex-direction: column; gap: 14px; max-width: 680px;">
+            <div>
+              <label for="newTitle" style="display:block; font-size:0.84rem; margin-bottom:6px; color:var(--text-muted);">Tên tiện ích *</label>
+              <input type="text" id="newTitle" required placeholder="VD: AutoSub — Dịch Phụ Đề Tự Động" style="width:100%; padding:11px 14px; border-radius:12px; border:1px solid var(--glass-border); background:var(--bg-input); color:var(--text-bright);">
+            </div>
+            <div>
+              <label for="newFolderPath" style="display:block; font-size:0.84rem; margin-bottom:6px; color:var(--text-muted);">Đường dẫn thư mục trên máy *</label>
+              <input type="text" id="newFolderPath" required value="D:\Tr_Hiuz\Tiện ích\" style="width:100%; padding:11px 14px; border-radius:12px; border:1px solid var(--glass-border); background:var(--bg-input); color:var(--text-bright);">
+            </div>
+            <div>
+              <label for="newTagline" style="display:block; font-size:0.84rem; margin-bottom:6px; color:var(--text-muted);">Mô tả tính năng chính *</label>
+              <input type="text" id="newTagline" required placeholder="Mô tả ngắn gọn tính năng nổi bật..." style="width:100%; padding:11px 14px; border-radius:12px; border:1px solid var(--glass-border); background:var(--bg-input); color:var(--text-bright);">
+            </div>
+            <div>
+              <label for="newWhatsAdded" style="display:block; font-size:0.84rem; margin-bottom:6px; color:var(--text-muted);">Ghi chú phiên bản</label>
+              <input type="text" id="newWhatsAdded" placeholder="Bản hoàn thiện v1.0" style="width:100%; padding:11px 14px; border-radius:12px; border:1px solid var(--glass-border); background:var(--bg-input); color:var(--text-bright);">
+            </div>
+            <button type="submit" class="btn-cute-primary" style="align-self: flex-start;">💾 Thêm Vào Kho Tiện Ích</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- SECTION 4: CẤU HÌNH WEB -->
+      <section class="view-section" id="secWebConfig" hidden>
+        <div class="glass-panel">
+          <div class="eyebrow-tag">// THIẾT LẬP HỆ THỐNG</div>
+          <h2 style="font-size: 1.5rem; margin-top: 6px;">Cấu Hình Giao Diện &amp; Thông Tin Web ⚙️</h2>
+          <p style="color: var(--text-muted); margin: 6px 0 18px;">
+            Chỉnh sửa tiêu đề, tên tác giả và lời chào trên trang người dùng.
+          </p>
+
+          <form id="formWebConfig" style="display: flex; flex-direction: column; gap: 14px; max-width: 680px;">
+            <div>
+              <label for="cfgTitle" style="display:block; font-size:0.84rem; margin-bottom:6px; color:var(--text-muted);">Tiêu đề chính trang người dùng:</label>
+              <input type="text" id="cfgTitle" value="Kho Tiện Ích Cá Nhân của Tr_Hiuz 💕" style="width:100%; padding:11px 14px; border-radius:12px; border:1px solid var(--glass-border); background:var(--bg-input); color:var(--text-bright);">
+            </div>
+            <div>
+              <label for="cfgAuthor" style="display:block; font-size:0.84rem; margin-bottom:6px; color:var(--text-muted);">Tên tác giả (Hiển thị góc trên trái):</label>
+              <input type="text" id="cfgAuthor" value="Tr_Hiuz" style="width:100%; padding:11px 14px; border-radius:12px; border:1px solid var(--glass-border); background:var(--bg-input); color:var(--text-bright);">
+            </div>
+            <div>
+              <label for="cfgSubtitle" style="display:block; font-size:0.84rem; margin-bottom:6px; color:var(--text-muted);">Lời giới thiệu dưới tiêu đề:</label>
+              <textarea id="cfgSubtitle" rows="3" style="width:100%; padding:11px 14px; border-radius:12px; border:1px solid var(--glass-border); background:var(--bg-input); color:var(--text-bright); resize:vertical;">Bộ sưu tập các tiện ích duyệt web xinh xắn, chặn sạch quảng cáo và tối ưu trải nghiệm học tập, giải trí hàng ngày. Cài đặt siêu nhanh chỉ với 1-chạm hoặc tải gói giải nén dùng ngay!</textarea>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+              <button type="submit" class="btn-cute-primary">💾 Lưu Cấu Hình Web</button>
+              <button type="button" class="btn-glass" id="btnResetConfig" style="color: var(--status-offline);">⚠️ Khôi Phục Mặc Định</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="cyber-toast" id="cyberToast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

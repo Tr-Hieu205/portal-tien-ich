@@ -1,0 +1,29 @@
+[
+  {
+    "clientId": "127.0.0.1-Chrome / Windows",
+    "ip": "104.28.217.54",
+    "utility": "AdShield Pro (Đang chặn Ads)",
+    "device": "Chrome / Windows",
+    "firstSeen": 1794491115958,
+    "lastSeen": 1794655913043,
+    "downloads": 0
+  },
+  {
+    "clientId": "seed-192-168-1-15",
+    "ip": "192.168.1.15",
+    "utility": "AdShield Pro — Chặn Ads Nâng Cao",
+    "device": "Brave Browser / Windows 11",
+    "firstSeen": 1794488577174,
+    "lastSeen": 1794490797174,
+    "downloads": 1
+  },
+  {
+    "clientId": "seed-192-168-1-28",
+    "ip": "192.168.1.28",
+    "utility": "CuteTube — YouTube Dark Pastel",
+    "device": "Google Chrome / Windows 11",
+    "firstSeen": 1794490017174,
+    "lastSeen": 1794490377174,
+    "downloads": 1
+  }
+]

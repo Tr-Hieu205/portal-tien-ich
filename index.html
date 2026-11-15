@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <title>Tr_Hiuz ✨ // Góc Tiện Ích Cá Nhân</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/typography.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="cyber-backdrop" aria-hidden="true"></div>
+
+  <div class="cyber-shell">
+    <!-- Left Cute Sidebar -->
+    <aside class="cyber-sidebar" aria-label="Điều hướng kho tiện ích">
+      <div>
+        <div class="sidebar-brand">
+          <div class="brand-avatar" id="brandAvatar" title="Nhấp 3 lần để sang Trang Admin Riêng">🌸</div>
+          <div class="brand-meta">
+            <div class="brand-name-box" id="adminTriggerName" title="Nhấp 3 lần liên tiếp vào tên để mở Trang Quản Trị">
+              <h1>Tr_Hiuz</h1>
+              <span style="font-size: 0.85rem;">✨</span>
+            </div>
+            <span>KHO TIỆN ÍCH CÁ NHÂN</span>
+          </div>
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Menu chính">
+          <div class="nav-section-label">Khám Phá</div>
+
+          <button type="button" class="sidebar-link is-active" id="btnNavHome">
+            <span>🏠 Trang Chủ</span>
+            <span class="nav-badge">HOME</span>
+          </button>
+
+          <details class="nav-accordion" id="utilitiesAccordion" open>
+            <summary>
+              <span style="flex: 1;">🧩 Tiện Ích Có Sẵn</span>
+              <span class="nav-badge" id="navTotalBadge">4</span>
+            </summary>
+            <div class="submenu-list" id="sidebarUtilityList" role="group" aria-label="Danh sách các tiện ích"></div>
+          </details>
+
+          <!-- Nút Quản Trị Viên -->
+          <div style="margin-top: 14px; padding-top: 10px; border-top: 1px solid var(--glass-border);">
+            <div class="nav-section-label" style="color: var(--neon-primary);">Khu Vực Quản Lý</div>
+            <a href="admin.html" class="sidebar-link" style="border-color: rgba(var(--neon-rgb), 0.35); background: rgba(var(--neon-rgb), 0.1);">
+              <span>👑 Mở Trang Admin Riêng</span>
+              <span class="nav-badge">ADMIN</span>
+            </a>
+          </div>
+        </nav>
+      </div>
+
+      <div>
+        <div class="nav-section-label">Tông Màu Giao Diện</div>
+        <div class="neon-switcher" role="group" aria-label="Chọn màu giao diện">
+          <button type="button" class="neon-swatch is-active" data-neon-select="cyan">🌸 Sakura</button>
+          <button type="button" class="neon-swatch" data-neon-select="synth">🍃 Matcha</button>
+          <button type="button" class="neon-swatch" data-neon-select="emerald">🍑 Peach</button>
+        </div>
+
+        <div style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--glass-border); font-size: 0.74rem; color: var(--text-muted);">
+          <div>📁 Vị trí máy: <code class="mono" style="color: var(--text-bright);">D:\Tr_Hiuz\Tiện ích</code></div>
+          <div style="color: var(--status-online); margin-top: 4px;">● Tự động kết nối máy chủ</div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="cyber-main">
+      <!-- VIEW 1: TRANG CHỦ -->
+      <section class="view-section" id="viewHome" aria-labelledby="homeHeading">
+        <div class="cyber-hero">
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 16px;">
+            <div>
+              <div class="eyebrow-tag">● CHÀO MỪNG BẠN GHÉ THĂM GÓC TIỆN ÍCH</div>
+              <h2 id="homeHeading" style="font-size: clamp(1.5rem, 2.3vw, 2.05rem); margin-top: 8px;">
+                Kho Tiện Ích Cá Nhân của Tr_Hiuz 💕
+              </h2>
+              <p id="homeSubtitle" style="color: var(--text-muted); margin: 10px 0 0; line-height: 1.6;">
+                Bộ sưu tập các tiện ích duyệt web xinh xắn, chặn sạch quảng cáo và tối ưu trải nghiệm học tập, giải trí hàng ngày. Cài đặt siêu nhanh chỉ với 1-chạm hoặc tải gói giải nén dùng ngay!
+              </p>
+            </div>
+
+            <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+              <a href="downloads/Cai_Dat_CuteTube.bat" download class="btn-cute-primary" data-track-dl="cutetube-bat">
+                🚀 Cài Nhanh CuteTube (.bat 1-chạm)
+              </a>
+              <a href="downloads/Cai_Dat_AdShield.bat" download class="btn-cute-secondary" data-track-dl="adshield-bat">
+                🛡️ Cài Nhanh AdShield (.bat 1-chạm)
+              </a>
+              <a href="downloads/Cai_Dat_Facebook_Toolkit.bat" download class="btn-cute-primary" style="border-color: rgba(59, 130, 246, 0.5); background: rgba(24, 119, 242, 0.2);" data-track-dl="facebook-toolkit-bat">
+                ⚡ Cài Nhanh Facebook Toolkit (.bat 1-chạm)
+              </a>
+              <a href="#quickGuideSection" class="btn-glass">
+                📖 Hướng Dẫn Cài
+              </a>
+            </div>
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: center;">
+            <div class="metric-box">
+              <div class="metric-label">Số Lượng Tiện Ích</div>
+              <div class="metric-value" id="homeCountTools">4 Tiện Ích</div>
+              <div style="font-size: 0.78rem; color: var(--status-online); margin-top: 4px;">● Đã kiểm tra mượt mà</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-label">Chuẩn Trình Duyệt</div>
+              <div class="metric-value">Chrome MV3</div>
+              <div style="font-size: 0.78rem; color: var(--neon-primary); margin-top: 4px;">Google Chrome, Edge, Cốc Cốc</div>
+            </div>
+            <div class="metric-box" style="grid-column: span 2;">
+              <div class="metric-label">Cài Đặt Siêu Nhanh</div>
+              <div style="font-size: 0.84rem; color: var(--text-bright); margin-top: 6px; line-height: 1.5;">
+                ✨ Nhấp <strong>Cài Nhanh (.bat)</strong>: Trình duyệt tự mở trang tiện ích kèm thư mục để bạn kéo thả trong 3 giây.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top: 22px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; flex-wrap: wrap; gap: 8px;">
+            <div>
+              <div class="eyebrow-tag">// DANH MỤC TIỆN ÍCH</div>
+              <h3 style="font-size: 1.25rem; margin-top: 4px;">Những Tiện Ích Đã Xây Dựng</h3>
+            </div>
+            <span style="font-size: 0.84rem; color: var(--text-muted);">Bấm vào thẻ bất kỳ để xem hướng dẫn chi tiết &amp; nhật ký</span>
+          </div>
+
+          <div class="hub-grid" id="homeCatalogGrid"></div>
+        </div>
+
+        <div class="home-bottom-grid" id="quickGuideSection" style="margin-top: 22px;">
+          <div class="glass-panel">
+            <div class="eyebrow-tag">// HƯỚNG DẪN 1-CHẠM</div>
+            <h3 style="font-size: 1.2rem; margin-top: 4px;">Cách Cài Tiện Ích Vào Chrome Trong 3 Bước</h3>
+            <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 14px;">
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <span class="status-pill" style="min-width: 32px; justify-content: center; font-weight: 700;">1</span>
+                <div>
+                  <strong style="color: var(--text-bright);">Nhấp nút Cài Nhanh (.bat)</strong>
+                  <p style="margin: 3px 0 0; color: var(--text-muted); font-size: 0.86rem;">
+                    File sẽ tự động mở trang <code class="mono" style="color: var(--neon-primary);">chrome://extensions</code> và mở thư mục chứa tiện ích trên máy tính bạn.
+                  </p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <span class="status-pill" style="min-width: 32px; justify-content: center; font-weight: 700;">2</span>
+                <div>
+                  <strong style="color: var(--text-bright);">Bật "Chế độ dành cho nhà phát triển"</strong>
+                  <p style="margin: 3px 0 0; color: var(--text-muted); font-size: 0.86rem;">
+                    Bật công tắc ở góc trên bên phải trang Tiện ích của Chrome.
+                  </p>
+                </div>
+              </div>
+              <div style="display: flex; gap: 12px; align-items: flex-start;">
+                <span class="status-pill" style="min-width: 32px; justify-content: center; font-weight: 700;">3</span>
+                <div>
+                  <strong style="color: var(--text-bright);">Kéo thả thư mục vào Chrome</strong>
+                  <p style="margin: 3px 0 0; color: var(--text-muted); font-size: 0.86rem;">
+                    Kéo thư mục tiện ích vừa hiện lên và thả thẳng vào màn hình Chrome là xong ngay lập tức!
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 16px; padding: 12px 14px; border-radius: 12px; background: rgba(0,0,0,0.25); display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+              <span style="font-size: 0.82rem; color: var(--text-muted);">Đường dẫn mở trang tiện ích:</span>
+              <button type="button" class="btn-glass" id="btnCopyChromeExtUrl" style="padding: 6px 12px; font-size: 0.78rem;">
+                📋 Copy: chrome://extensions
+              </button>
+            </div>
+          </div>
+
+          <div class="glass-panel">
+            <div class="eyebrow-tag">// CHIA SẺ TIỆN ÍCH</div>
+            <h3 style="font-size: 1.2rem; margin-top: 4px;">Mã QR Tải Tiện Ích</h3>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0;">
+              <button type="button" class="chip-btn is-active" data-qr-val="downloads/cutetube.zip">CuteTube.zip</button>
+              <button type="button" class="chip-btn" data-qr-val="downloads/adshield.zip">AdShield.zip</button>
+              <button type="button" class="chip-btn" data-qr-val="downloads/facebook-toolkit.zip">FB-Toolkit.zip</button>
+              <button type="button" class="chip-btn" data-qr-val="downloads/adblock-dns.mobileconfig">DNS Profile</button>
+            </div>
+            <input type="text" id="qrCustomInput" value="downloads/cutetube.zip" aria-label="Nội dung tạo mã QR" style="width:100%; padding:9px 13px; border-radius:12px; border:1px solid var(--glass-border); background:var(--bg-input); color:var(--text-bright); font-size:0.84rem;">
+            <div class="qr-stage">
+              <div class="qr-svg-box" id="qrSvgContainer"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- VIEW 2: TRANG CHI TIẾT TỪNG TIỆN ÍCH -->
+      <section class="view-section" id="viewUtility" hidden aria-labelledby="utilDetailTitle">
+        <div class="glass-panel" style="border-color: var(--glass-border-strong); box-shadow: var(--card-shadow), var(--neon-glow);">
+          <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-bottom: 16px; border-bottom: 1px solid var(--glass-border);">
+            <button type="button" class="btn-glass" id="btnBackToHome">← Quay Lại Trang Chủ</button>
+            <span class="status-pill">
+              <span class="status-dot"></span>
+              <span id="utilDetailStatus">Hoạt Động Ngay</span>
+            </span>
+          </div>
+
+          <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 18px;">
+            <div style="display: flex; align-items: flex-start; gap: 16px; flex: 1 1 420px;">
+              <div class="card-icon-wrap" id="utilDetailIcon" style="width: 64px; height: 64px;"></div>
+              <div>
+                <div class="eyebrow-tag" id="utilDetailBadge">CHROME EXTENSION</div>
+                <h2 id="utilDetailTitle" style="font-size: 1.55rem; margin-top: 4px;">Tên Tiện Ích</h2>
+                <p id="utilDetailSummary" style="color: var(--text-muted); margin: 8px 0 0; max-width: 68ch; line-height: 1.5;"></p>
+              </div>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 8px; min-width: 230px;" id="utilDetailActions"></div>
+          </div>
+
+          <div style="margin-top: 18px; padding: 12px 16px; border-radius: 14px; background: rgba(0, 0, 0, 0.35); border: 1px solid var(--glass-border); display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap;">
+            <div>
+              <span style="font-size: 0.74rem; color: var(--text-muted); display: block;">ĐƯỜNG DẪN THƯ MỤC TRÊN MÁY:</span>
+              <code class="mono" id="utilDetailPath" style="color: var(--neon-primary); font-size: 0.88rem;">D:\Tr_Hiuz\Tiện ích\Youtube</code>
+            </div>
+            <button type="button" class="btn-glass" id="btnCopyFolderPath">📋 Copy Đường Dẫn</button>
+          </div>
+        </div>
+
+        <div class="detail-grid-two" style="margin-top: 20px;">
+          <div class="glass-panel">
+            <div class="eyebrow-tag">// 01 · TÍNH NĂNG BÊN TRONG</div>
+            <h3 style="font-size: 1.2rem; margin-top: 4px;">Tiện Ích Này Có Những Gì?</h3>
+            <div id="utilFeaturesList" style="display: flex; flex-direction: column; gap: 10px; margin-top: 14px;"></div>
+          </div>
+
+          <div class="glass-panel">
+            <div class="eyebrow-tag">// 02 · NHẬT KÝ CẬP NHẬT</div>
+            <h3 style="font-size: 1.2rem; margin-top: 4px;">Đã Thêm &amp; Nâng Cấp Những Gì?</h3>
+            <ul class="added-item-list" id="utilAddedList"></ul>
+          </div>
+        </div>
+
+        <div class="detail-grid-two" style="margin-top: 20px;">
+          <div class="glass-panel">
+            <div class="eyebrow-tag">// 03 · CÁC TỆP BÊN TRONG</div>
+            <h3 style="font-size: 1.15rem; margin-top: 4px;">Cấu Trúc Tệp Đã Dọn Gọn</h3>
+            <ul class="file-tree-list" id="utilFileTree"></ul>
+          </div>
+
+          <div class="glass-panel">
+            <div class="eyebrow-tag">// 04 · CÁCH CÀI ĐẶT</div>
+            <h3 style="font-size: 1.15rem; margin-top: 4px;">Các Bước Sử Dụng Ngay</h3>
+            <div id="utilStepsList" style="margin-top: 12px;"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="cyber-toast" id="cyberToast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
